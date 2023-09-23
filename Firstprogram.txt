@@ -1,0 +1,19 @@
+public class CompareSums {
+    public static void main(String[] args) {
+        // Declare four integer variables
+        int a = 10;
+        int b = 5;
+        int c = 7;
+        int d = 3;
+
+        int sumAB = a + b;
+        int sumBD = b + d;
+
+        
+        if (sumAB > sumBD) {
+            System.out.println("The sum of a and b is greater than the sum of b and d.");
+        } else {
+            System.out.println("The sum of a and b is not greater than the sum of b and d.");
+        }
+    }
+}

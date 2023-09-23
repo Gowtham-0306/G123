@@ -1,3 +1,0 @@
-123
-sample data for paymemnt application.
-EOF
