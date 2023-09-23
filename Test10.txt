@@ -1,0 +1,19 @@
+package learning.java;
+
+
+
+public class LengthInteger {
+    public static void main(String[] args) {
+       
+        int number = 1265;
+        
+//converting the int to string by using to string method//
+        String numberAsString = Integer.toString(number);
+
+        // Calculate the number of digits by finding the length of the string
+        int numberOfDigits = numberAsString.length();
+
+        // Print the result
+        System.out.println("The number of digits in " + number + " is: " + numberOfDigits);
+    }
+}

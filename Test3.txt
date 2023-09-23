@@ -1,1 +1,21 @@
-3rd file.
+package learning.java;
+
+public class PrintAlpha {
+
+	
+
+		    public static void main(String[] args) {
+		        char startChar = 'A';
+		        char endChar = 'Z';
+
+		        for (char ch = startChar; ch <= endChar; ch++) {
+		            System.out.print(ch + " ");
+		        }
+		    }
+		
+
+		
+		
+		
+	}
+
