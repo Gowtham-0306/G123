@@ -1,4 +1,0 @@
-sample text..
-newly inserted!!!
-123
-end of the file.
