@@ -1,0 +1,65 @@
+package learning.java;
+
+public class Tea {
+ // this is the Common method to prepare tea
+	
+	///
+ public void prepareTea() {
+     System.out.println("Pouring hot water into a cup");
+     System.out.println("Adding tea leaves");
+     System.out.println("Brewing the tea");
+     System.out.println("Tea is ready! Enjoy your tea");
+ }
+
+ 
+ public static void main(String[] args) {
+     System.out.println("Preparing Black Tea :");
+     BlackTea blackTea = new BlackTea();
+     blackTea.prepareTea();
+
+     System.out.println("Preparing Green Tea:");
+     GreenTea greenTea = new GreenTea();
+     greenTea.prepareTea();
+
+     System.out.println("Preparing Herbal Tea:");
+     HerbalTea herbalTea = new HerbalTea();
+     herbalTea.prepareTea();
+ }
+}
+
+//Black Tea
+///
+class BlackTea extends Tea {
+ @Override
+ public void prepareTea() {
+     System.out.println("Pouring hot water into a cup...");
+     System.out.println("Adding black tea leaves...");
+     System.out.println("Brewing black tea for 3 minutes...");
+     System.out.println("Black Tea is ready! Enjoy your tea!");
+ }
+}
+
+//this is Green Tea
+////
+class GreenTea extends Tea {
+ @Override
+ public void prepareTea() {
+     System.out.println("Pouring hot water into a cup...");
+     System.out.println("Adding green tea leaves...");
+     System.out.println("Brewing green tea for 2 minutes...");
+     System.out.println("Green Tea is ready! Enjoy your tea!");
+ }
+}
+
+//this is Herbal Tea
+
+//
+class HerbalTea extends Tea {
+@Override
+ public void prepareTea() {
+     System.out.println("Pouring hot water into a cup...");
+     System.out.println("Adding herbal tea blend...");
+     System.out.println("Brewing herbal tea for 5 minutes...");
+     System.out.println("Herbal Tea is ready! Enjoy your tea!");
+ }
+}

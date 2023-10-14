@@ -1,0 +1,54 @@
+
+
+package learning.java;
+
+
+class MainTea {
+    static class Tea {
+        public void brew() {
+            System.out.println("preparing tea");
+        }
+
+        public void addCondiments() {
+            System.out.println("now we adding ingredients to tea...");
+        }
+    }
+
+    static class GreenTea extends Tea {
+        @Override
+        public void brew() {
+            System.out.println("preparing green tea");
+        }
+
+        @Override
+        public void addCondiments() {
+            System.out.println("Adding lemon to green tea.");
+        }
+    }
+
+    static class BlackTea extends Tea {
+        @Override
+        public void brew() {
+            System.out.println("preparing black tea...");
+        }
+
+        @Override
+        public void addCondiments() {
+            System.out.println("Adding milk and sugar to black tea.");
+        }
+    }
+
+    public static void main(String[] args) {
+        Tea[] teas = new Tea[3];
+        teas[0] = new Tea();
+        teas[1] = new GreenTea();
+        teas[2] = new BlackTea();
+
+        for (Tea tea : teas) {
+            System.out.println("Preparing tea:");
+            tea.brew();
+            tea.addCondiments();
+            System.out.println("");
+        }
+    }
+}

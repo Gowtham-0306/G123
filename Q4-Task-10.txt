@@ -1,0 +1,62 @@
+package learning.java;
+
+public class Account {
+    
+    private double balance;
+
+    // This is no argument constructor
+    public Account() {
+        this.balance = 70.0; // here we specify 70 as Default balance is 70.0
+    }
+
+    // this is 2argument constructor
+    public Account(double initialBalance) {
+        this.balance = initialBalance;
+    }
+
+    // Method to withdraw balance
+    public void withdraw(double amount) {
+        if (balance >= amount) {
+            balance -= amount;
+            System.out.println("Withdrawal of Rs" + amount + " successful. Remaining balance: rs" + balance);
+        } else {
+            System.out.println("Insufficient funds. Withdrawal unsuccessful.");
+        }
+    }
+
+    // deposit balance metod ///
+    ///
+    public void deposit(double amount) {
+        balance += amount;
+        System.out.println("Deposit of rs" + amount + " successful. Current balance: rs" + balance);
+    }
+
+    // Getter method for the balance 
+    ////
+    public double getBalance() {
+        return balance;
+    }
+
+    // Main method 
+    /////
+    public static void main(String[] args) {
+        // Creating Account objects using different constructors
+        Account account1 = new Account(); // No-argument constructor, default balance is 0.0
+        Account account2 = new Account(100.0); // Two-argument constructor, initial balance is 100.0
+
+        // Depositing and withdrawing from accounts
+        account1.deposit(50.0);
+        account1.withdraw(30.0);
+
+        account2.withdraw(20.0);
+        account2.deposit(70.0);
+
+        //here we are printing the  Getting and printing final balances
+        ////
+        double finalBalance1 = account1.getBalance();
+        double finalBalance2 = account2.getBalance();
+        
+        System.out.println("Final Balance of Account 1: rs" + finalBalance1);
+        System.out.println("Final Balance of Account 2: rs" + finalBalance2);
+    }
+}

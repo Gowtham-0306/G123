@@ -1,0 +1,45 @@
+package learning.java;
+
+public class Circle {
+    
+    private double radius;
+
+    // this is No arg constructor/////
+    public Circle() {
+        this.radius = 1.0; // Default radius is 1.0 if not specified
+    }
+
+    // This is two arg constructor ////
+    public Circle(double radius) {
+        this.radius = radius;
+    }
+
+    // Method for calculating calculate circumference///
+    public double calculateCircumference() {
+        return 2 * Math.PI * radius;
+    }
+
+    
+    public double getRadius() {
+        return radius;
+    }
+
+    public void setRadius(double radius) {
+        this.radius = radius;
+    }
+
+   
+    public static void main(String[] args) {
+        // Creating Circle objects using different constructors
+        Circle circle1 = new Circle(); // No-argument constructor, default radius is 1.0
+        Circle circle2 = new Circle(5.0); // Two-argument constructor, radius is set to 5.0
+
+        // here we are Calculating  the circumferences given data//
+        double circumference1 = circle1.calculateCircumference();
+        double circumference2 = circle2.calculateCircumference();
+
+       
+        System.out.println("Circumference of the Circle 1: " + circumference1);
+        System.out.println("Circumference of the Circle 2: " + circumference2);
+    }
+}

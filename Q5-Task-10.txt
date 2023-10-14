@@ -1,0 +1,50 @@
+package learning.java;
+
+
+public class Tea {
+ private boolean TeaisPrepared = false;
+ private boolean hasMilk = false;
+ private boolean hasSugar = false;
+
+ // here we preparing the basic tea
+ ///
+ public void prepareTea() {
+     System.out.println(" now we Pouring hot water into a cup with tea leaves");
+     TeaisPrepared = true;
+     System.out.println("now the Basic tea is ready!");
+ }
+
+ // here we adding milk to the tea.
+ ///
+ public void addMilk() {
+     if (TeaisPrepared) {
+         System.out.println("now we Adding milk to the tea...");
+         hasMilk = true;
+         System.out.println("now Tea with milk is ready");
+     } else {
+         System.out.println("Tea is not prepared yet. Please prepare tea first.");
+     }
+ }
+
+ // here we adding sugar for the prepared tea
+ ////
+ public void addSugar() {
+     if (TeaisPrepared && hasMilk) {
+         System.out.println("Adding sugar to the tea...");
+         hasSugar = true;
+         System.out.println("Tea with milk and sugar is ready! Enjoy your tea!");
+     } else {
+         System.out.println("Tea is not prepared with milk. Please add milk first.");
+     }
+ }
+
+ 
+ public static void main(String[] args) {
+     Tea myTea = new Tea(); 
+
+     //  tea with milk and sugar
+     myTea.prepareTea();
+     myTea.addMilk();
+     myTea.addSugar();
+ }
+}
