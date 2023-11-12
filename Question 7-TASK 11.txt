@@ -1,0 +1,37 @@
+package leaning.selenium;
+
+import java.util.Scanner;
+
+public class AgeValidation {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter your age: ");
+        int enteredAge = scanner.nextInt();
+
+        try {
+            validateAge(enteredAge);
+            System.out.println("Age is valid. You can proceed.");
+            //  logic to handle if the user enters valid age
+        } catch (InvalidAgeException e) {
+            System.out.println("Invalid age: " + e.getMessage());
+            // Additional logic for handling an invalid age can go here
+        }
+    }
+
+    private static void validateAge(int age) throws InvalidAgeException {
+        // check the entered age is less than 18
+        if (age < 18) {
+            throw new InvalidAgeException("Age must be 18 or older.");
+        }
+        // If the age is valid we can use below logic
+    }
+
+    // Custom exception class for invalid age
+    static class InvalidAgeException extends Exception {
+        public InvalidAgeException(String message) {
+            super(message);
+        }
+    }
+}

@@ -1,0 +1,24 @@
+package leaning.selenium;
+
+public class ExceptionHandle {
+
+    public static void main(String[] args) {
+        try {
+            // ArrayIndexOutOfBoundsException
+            int[] numbers = {1, 2, 3};
+            int indexOutOfRange = numbers[5]; // Accessing an index that is out of bounds
+
+        } catch (ArrayIndexOutOfBoundsException e) {
+            System.out.println("Caught ArrayIndexOutOfBoundsException: Attempted to access an index beyond the array size.");
+        }
+
+        try {
+            // StringIndexOutOfBoundsException
+            String str = "Hello";
+            char characterOutOfRange = str.charAt(10); // Accessing an index that is out of bounds
+
+        } catch (StringIndexOutOfBoundsException e) {
+            System.out.println("Caught StringIndexOutOfBoundsException: Attempted to access an index beyond the string length.");
+        }
+    }
+}
