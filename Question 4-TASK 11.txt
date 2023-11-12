@@ -1,0 +1,40 @@
+package leaning.selenium;
+
+import java.util.Scanner;
+
+public class ExceptionHandlingDivision {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Read the  integer from user
+        System.out.print("Enter the first integer: ");
+        int numerator = scanner.nextInt();
+
+        // Read the second integer
+        System.out.print("Enter the second integer: ");
+        int denominator = scanner.nextInt();
+
+        try {
+            //  division
+            double result = divide(numerator, denominator);
+
+            // Display the result
+            System.out.println("Result of division: " + result);
+        } catch (ArithmeticException e) {
+            // Handle division by zero exception
+            System.out.println("Error: Division by zero is not allowed. Please enter a non-zero denominator.");
+        } finally {
+            // Close the scanner to prevent resource leaks
+            scanner.close();
+        }
+    }
+
+    // Method to perform divi if denom is zero
+    private static double divide(int numerator, int denominator) {
+        if (denominator == 0) {
+            throw new ArithmeticException("Division by zero is not allowed.");
+        }
+        return (double) numerator / denominator;
+    }
+}
