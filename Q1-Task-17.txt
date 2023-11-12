@@ -1,0 +1,84 @@
+package leaning.selenium;
+
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
+
+public class SnapdealLoginVerification {
+
+    public static void main(String[] args) {
+      
+        // Initialize the WebDriver
+        WebDriver driver;
+    	WebDriverManager.chromedriver().setup();
+		driver = new ChromeDriver();
+
+        try {
+            // Open the Chrome browser and navigate to Snapdeal website
+            driver.get("http://www.snapdeal.com");
+            WebElement notification=driver.findElement(By.xpath("//button[@id='pushDenied']"));
+            notification.click();
+            // Locate the sign-in button using XPath
+            WebElement signInButton = driver.findElement(By.xpath("//span[@class='accountUserName col-xs-12 reset-padding']"));
+
+            // Move to the sign-in button and hold it using Actions
+            Actions actions = new Actions(driver);
+            actions.moveToElement(signInButton).build().perform();
+
+            // Click on the sign-in button
+            signInButton.click();
+            
+            
+           WebElement LogIn= driver.findElement(By.xpath("//span[@class='accountBtn btn rippleWhite']//a[@href='https://www.snapdeal.com/login']"));
+           LogIn.click();
+            Thread.sleep(5000);
+           
+            WebElement Mobile = driver.findElement(By.xpath("//div[@class='number-prefix number-prefix-disable']//input[@id='userName']"));
+            Thread.sleep(9000);
+            
+            Mobile.sendKeys("1234567891");
+
+            WebElement Continue = driver.findElement(By.xpath("//div[@class='number-prefix number-prefix-disable']//input[@id='userName']"));
+            Continue.click();
+            Thread.sleep(5000);
+            // Locate the email field and enter a valid email
+            WebElement emailField = driver.findElement(By.xpath("//input[@id='j_username_new']"));
+            emailField.sendKeys("dummy user.com");
+
+         // click on name
+            WebElement Name = driver.findElement(By.xpath("//input[@id='j_name']"));
+            Name.click();
+            // Locate the password field and enter a valid password
+            WebElement passwordField = driver.findElement(By.xpath("j_password"));
+            passwordField.sendKeys("dummy password");
+            
+            // Click on the continue button
+            WebElement continueButton = driver.findElement(By.xpath("//button[@id='userSignup']"));
+            continueButton.click();
+
+            // Wait for some time to let the login process complete (You may need to enhance this based on your page load times)
+            Thread.sleep(5000);
+
+            // Verify if the user is logged in successfully
+            String loggedInUser = driver.findElement(By.xpath("//div[@class='accountUserName col-xs-12 reset-padding']")).getText();
+            if (!loggedInUser.isEmpty()) {
+                System.out.println("Login Successful. User: " + loggedInUser);
+            } else {
+                System.out.println("Login Failed.");
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            // Close the browser
+            driver.quit();
+        }
+    }
+}
