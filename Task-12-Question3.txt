@@ -1,0 +1,24 @@
+package learning.java;
+
+import java.util.TreeMap;
+import java.util.*;
+
+public class TreeMapEmployee {
+    public static void main(String[] args) {
+        // Create a TreeMap to store Employee IDs and Names
+        TreeMap<Integer, String> employeeTreeMap = new TreeMap<>();
+
+        // Add employee data to the TreeMap
+        employeeTreeMap.put(101, "John Doe");
+        employeeTreeMap.put(102, "Alice Smith");
+        employeeTreeMap.put(103, "Bob Johnson");
+        employeeTreeMap.put(104, "Eva Williams");
+        employeeTreeMap.put(105, "David Brown");
+
+        // Print employee names in alphabetical order
+        System.out.println("Employee Names in Alphabetical Order:");
+        for (String name : employeeTreeMap.values()) {
+            System.out.println(name);
+        }
+    }
+}

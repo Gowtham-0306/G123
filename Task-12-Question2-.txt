@@ -1,0 +1,25 @@
+package learning.java;
+
+import java.util.ArrayList;
+
+public class ArrayListEx {
+    public static void main(String[] args) {
+        // Create an ArrayList of Strings
+        ArrayList<String> stringList = new ArrayList<>();
+
+        // Add some elements to the ArrayList
+        stringList.add("Apple");
+        stringList.add("Banana");
+        stringList.add("Orange");
+        stringList.add("Grapes");
+
+        // Print the ArrayList before removal
+        System.out.println("ArrayList before removal: " + stringList);
+
+        // Removing all elements from the ArrayList
+        stringList.clear();
+
+        // Printing the ArrayList after removal
+        System.out.println("ArrayList after removal: " + stringList);
+    }
+}

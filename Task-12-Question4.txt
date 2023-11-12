@@ -1,0 +1,24 @@
+package learning.java;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class ListToArray {
+    public static void main(String[] args) {
+        // here we are creating List of integers
+        List<Integer> integerList = new ArrayList<>();
+        integerList.add(1);
+        integerList.add(2);
+        integerList.add(3);
+        integerList.add(4);
+
+        // Converting List to Array
+        Integer[] integerArray = integerList.toArray(new Integer[0]);
+
+        // Printing the elements of the array
+        System.out.println("Array elements:");
+        for (Integer num : integerArray) {
+            System.out.print(num + " ");
+        }
+    }
+}
