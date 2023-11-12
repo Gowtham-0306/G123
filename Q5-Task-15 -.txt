@@ -1,0 +1,45 @@
+1. Java installed on your machine.
+2. Download Selenium WebDriver library  and add to your project.
+3. Download ChromeDriver executable and configure the path.
+
+Here are the steps:
+
+ Step 1: Set Up Your Project
+
+Step 2: Download ChromeDriver
+
+Step 3: Create a New Java Class
+
+Create a new Java class in your project. For example,SimpleWebDriverScript.
+
+Step 4: Write the Selenium WebDriver Code
+
+ The following code to open the Chrome browser, navigate to a website, and perform a simple action (in this case, printing the title of the webpage):
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class SimpleWebDriverScript {
+    public static void main(String[] args) {
+        // Set the path to the ChromeDriver executable
+        System.setProperty("webdriver.chrome.driver", "path/to/chromedriver.exe");
+
+        // Create a new instance of the ChromeDriver
+        WebDriver driver = new ChromeDriver();
+
+        // Navigate to the desired website
+        driver.get("https://www.example.com");
+
+        // Get and print the title of the webpage
+        String pageTitle = driver.getTitle();
+        System.out.println("Page Title: " + pageTitle);
+
+        // Close the browser
+        driver.quit();
+    }
+}
+
+ Step 5: Run the Script
+
+Compile and run your Java class. You should see the Chrome browser open, navigate to "https://www.example.com," print the title of the webpage to the console, and then close the browser.
+
