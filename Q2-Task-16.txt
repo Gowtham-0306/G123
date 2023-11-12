@@ -1,0 +1,41 @@
+package leaning.selenium;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class DemoBlazeExample {
+
+    public static void main(String[] args) {
+        // Set the path to the location where you have the ChromeDriver executable
+        System.setProperty("webdriver.chrome.driver" , "C:\\Users\\91882\\eclipse-workspace\\Test1\\sampleselenium\\drivers\\chrome.driver.exe");
+
+        // Create a new instance of the ChromeDriver
+        WebDriver driver = new ChromeDriver();
+
+        // Maximize the browser window
+        driver.manage().window().maximize();
+
+        // Navigate to "http://demoblaze.com"
+        driver.get("http://demoblaze.com");
+
+        // Get the title of the page
+        String pageTitle = driver.getTitle();
+
+        // Verify if the title matches "STORE" and print the appropriate message
+        if (pageTitle.equals("STORE")) {
+            System.out.println("PAGE LANDED ON CORRECT WEBSITE");
+        } else {
+            System.out.println("PAGE NOT LANDED ON CORRECT WEBSITE");
+        }
+
+        // 
+        try {
+            Thread.sleep(5000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+        // Close the browser
+        driver.quit();
+    }
+}
